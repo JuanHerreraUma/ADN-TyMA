@@ -50,6 +50,7 @@ def marcosLectura(seq):
     marcos.append(traduccion(seq, 3))
     marcos.append(traduccion(seq, 4))
     marcos.append(traduccion(seq, 5))
+
     return marcos
 
 
@@ -59,9 +60,8 @@ def codones(seq):
     for b in range(numeroNucleotidos):
         if (seq[b:b + 3] == "AUG"):
             start_position = b
-            print("Codon de inicio")
+            print("Codon de inicio detectado. Ahora leemos las bases de tres en tres...")
             break
-    print("Ahora leemos las bases de tres en tres...")
     for t in range(start_position, numeroNucleotidos, 3):
         codon = seq[t:t + 3]
         print(codon)

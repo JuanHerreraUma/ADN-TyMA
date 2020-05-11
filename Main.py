@@ -19,7 +19,7 @@ print(f"   {''.join(['|' for c in range (len(secuencia))])}")
 print(f"3' {Complementaria(secuencia)} 5'")
 print(f"5' {reversaComplementaria(secuencia)} 3'\n")
 
-print("La secuencia de RNA resultante es: ", transcripcion(reversaComplementaria(secuencia)))
+print("La secuencia de ARN mensajero resultante es: ", transcripcion(reversaComplementaria(secuencia)))
 
 ARNmensajero = transcripcion(reversaComplementaria(secuencia))
 
