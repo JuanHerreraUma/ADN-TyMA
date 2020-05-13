@@ -45,31 +45,14 @@ def transcripcion(dna_seq):
     # Proceso en el que el adn se transforma en arn antes de ser traducido a proteinas
     return dna_seq.replace("T", "U")
 
-
 def Complementaria(seq):
     return ''.join([Compl[nucleotidos] for nucleotidos in seq])
-
 
 def reversaComplementaria(seq):
     return ''.join([Compl[nucleotidos] for nucleotidos in seq])[::-1]
 
-
 def traduccion(seq, init_pos=0):
     return [ADN_Codones[seq[pos:pos + 3]] for pos in range(init_pos, len(seq) - 2, 3)]
-
-
-def marcosLectura(seq):
-    # Genera seis marcos de lectura
-    marcos = []
-    marcos.append(traduccion(seq, 0))
-    marcos.append(traduccion(seq, 1))
-    marcos.append(traduccion(seq, 2))
-    marcos.append(traduccion(seq, 3))
-    marcos.append(traduccion(seq, 4))
-    marcos.append(traduccion(seq, 5))
-
-    return marcos
-
 
 def codones(seq):
     numeroNucleotidos = len(seq)
@@ -88,3 +71,18 @@ def codones(seq):
             print("Un codon de parada!")
         elif (codon == "UGA"):
             print("Un codon de parada!")
+
+def marcosLectura(seq):
+    # Genera seis marcos de lectura
+    marcos = []
+    marcos.append(traduccion(seq, 0))
+    marcos.append(traduccion(seq, 1))
+    marcos.append(traduccion(seq, 2))
+    marcos.append(traduccion(seq, 3))
+    marcos.append(traduccion(seq, 4))
+    marcos.append(traduccion(seq, 5))
+
+    return marcos
+
+
+
