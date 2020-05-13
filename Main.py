@@ -10,7 +10,7 @@ secuencia = validarSecuencia(secuenciaAleatoria)
 
 print("Secuencia = ", secuencia)
 
-print("Las frencuencias relativas de los nucleótidos es: ", contarFrecuenciaNuc(secuencia))
+print(contarFrecuenciaNuc(secuencia))
 
 print("Complementaria: ", Complementaria(secuencia))
 

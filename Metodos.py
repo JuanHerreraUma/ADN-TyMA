@@ -35,10 +35,11 @@ def contarFrecuenciaNuc(dna_sec):
     for nucleotidos in dna_sec:
         tmpFreq[nucleotidos] += 1
 
-    print("A=",(tmpFreq["A"] / len(dna_sec)) * 100,"%",
-          "C=",(tmpFreq["C"] / len(dna_sec)) * 100,"%",
-          "G=",(tmpFreq["G"] / len(dna_sec)) * 100,"%",
-          "T=",(tmpFreq["T"] / len(dna_sec)) * 100,"%",)
+    print("Las frencuencias relativas de los nucleótidos es: ")
+    return (print("A=",(tmpFreq["A"] / len(dna_sec)) * 100,"%",
+           "C=",(tmpFreq["C"] / len(dna_sec)) * 100,"%",
+           "G=",(tmpFreq["G"] / len(dna_sec)) * 100,"%",
+           "T=",(tmpFreq["T"] / len(dna_sec)) * 100,"%",))
 
 def transcripcion(dna_seq):
     # Proceso en el que el adn se transforma en arn antes de ser traducido a proteinas
