@@ -20,13 +20,13 @@ ADN_Codones = {"GCA": "A", "GCC": "A", "GCG": "A", "UGC": "C", "UGU": "C", "GAC"
 
 
 # Validamos la secuencia
+
 def validarSecuencia(dna_sec):
     tmpseq = dna_sec.upper()  # Necesitamos las letras en mayúsculas
     for nucleotidos in tmpseq:
         if nucleotidos not in nucleotidos:
             return False
     return tmpseq
-
 
 # Contar la frecuencia de los nucleótidos
 
@@ -41,18 +41,27 @@ def contarFrecuenciaNuc(dna_sec):
            "G=",(tmpFreq["G"] / len(dna_sec)) * 100,"%",
            "T=",(tmpFreq["T"] / len(dna_sec)) * 100,"%",))
 
+# Proceso en el que el adn se transforma en arn antes de ser traducido a proteinas
+
 def transcripcion(dna_seq):
-    # Proceso en el que el adn se transforma en arn antes de ser traducido a proteinas
     return dna_seq.replace("T", "U")
 
-def Complementaria(seq):  #Halla la secuencia complementaria
+#Halla la secuencia complementaria
+
+def Complementaria(seq):
     return ''.join([Compl[nucleotidos] for nucleotidos in seq])
+
+#Halla la secuencia reversa complementaria
 
 def reversaComplementaria(seq):
     return ''.join([Compl[nucleotidos] for nucleotidos in seq])[::-1]
 
+#Proceso de traducción
+
 def traduccion(seq, init_pos=0):
     return [ADN_Codones[seq[pos:pos + 3]] for pos in range(init_pos, len(seq) - 2, 3)]
+
+#Codones de inicio y de parada
 
 def codones(seq):
     numeroNucleotidos = len(seq)
@@ -71,6 +80,8 @@ def codones(seq):
             print("Un codon de parada!")
         elif (codon == "UGA"):
             print("Un codon de parada!")
+
+#Encuentra los seis marcos de lectura
 
 def marcosLectura(seq):
     # Genera seis marcos de lectura
