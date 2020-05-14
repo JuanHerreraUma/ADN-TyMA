@@ -4,7 +4,7 @@
 from Metodos import *
 import random
 
-secuenciaAleatoria = ''.join([random.choice(Nucleotidos) for nucleotidos in range(100)])
+secuenciaAleatoria = ''.join([random.choice(Nucleotidos) for nucleotidos in range(4000)])
 
 secuencia = validarSecuencia(secuenciaAleatoria)
 
@@ -32,3 +32,4 @@ print("Secuencia de aminoácidos: ", secuenciaAminoacidos)
 print("Marcos de lectura: ")
 for marcos in marcosLectura(ARNmensajero):
     print(marcos)
+

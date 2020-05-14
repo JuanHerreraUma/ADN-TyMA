@@ -45,7 +45,7 @@ def transcripcion(dna_seq):
     # Proceso en el que el adn se transforma en arn antes de ser traducido a proteinas
     return dna_seq.replace("T", "U")
 
-def Complementaria(seq):
+def Complementaria(seq):  #Halla la secuencia complementaria
     return ''.join([Compl[nucleotidos] for nucleotidos in seq])
 
 def reversaComplementaria(seq):
